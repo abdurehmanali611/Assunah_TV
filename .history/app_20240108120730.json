@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Assunah_Tv",
+    "slug": "Assunah_Tv",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/as-sunnah Gold V2.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/as-sunnah txr 2.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
