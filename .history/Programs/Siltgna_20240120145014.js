@@ -19,7 +19,7 @@ const Siltgna = () => {
                 </Link>
                 <Link 
                 style = {styles.link}
-                to={'/siltgnalink'}>
+                to={'/Haderelink'}>
                 <Text style = {{fontSize: 20}}>Timely Education</Text>
                 </Link>
             </ScrollView>
