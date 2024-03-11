@@ -9,69 +9,51 @@ const Contacts = () => {
     <ScrollView showsVerticalScrollIndicator = {false}>
       <Text style = {styles.header}>Welcome to Assunah Tv Contact info</Text>
       <View style = {styles.socialmedia}>
-      <Text style  ={styles.social}>Social Media</Text>
       <View style = {{flexDirection: 'row', marginVertical: 20}}>
       <View>
         <TouchableOpacity
-        onPress={() => Linking.openURL('https://t.me/+251935000642')}
+        onPress={() => Linking.openURL('https://t.me/+251903000102')}
         style = {styles.imageandtxt}> 
         <Image 
         source={require('../assets/telegram.png')}
         style = {{width: 50, height: 50, borderRadius: 20}}
         />
-        <Text>Abdurehman Ali</Text>
+        <Text>Assunah</Text>
         </TouchableOpacity>
       </View>
       <View style = {{marginLeft: 20}}>
-        <TouchableOpacity onPress={() => Linking.openURL('whatsapp://send?phone=+251935000642')}
+        <TouchableOpacity onPress={() => Linking.openURL('whatsapp://send?phone=+251903000102')}
         style = {styles.imageandtxt}> 
         <Image 
         source={require('../assets/whatsapp.png')}
         style = {{width: 50, height: 50, borderRadius: 20}}
         />
-        <Text>Abdurehman Ali</Text>
+        <Text>Assunah</Text>
         </TouchableOpacity>
       </View>
       </View>
-      <View style  = {{alignItems: 'center', marginVertical: 20}}>
-        <TouchableOpacity onPress={() => Linking.openURL('whatsapp://send?phone=+251935000642')}
+      <View style = {{flexDirection: 'row', marginVertical: 20}}>
+        <TouchableOpacity onPress={() => Linking.openURL('mailto://assunnahtv.et@gmail.com')}
         style = {styles.imageandtxt}> 
         <Image 
         source={require('../assets/email.png')}
         style = {{width: 50, height: 50, borderRadius: 20, alignSelf: 'center'}}
         />
-        <Text>Abdurehman Ali</Text>
+        <Text>Assunah</Text>
         </TouchableOpacity>
-      </View>
-      </View>
-      <View style = {styles.socialmedia}>
-      <Text style = {styles.social}>Phone</Text>
-      <View style = {{flexDirection: 'row'}}>
         <View>
-          <TouchableOpacity
+        <TouchableOpacity
           style = {styles.imageandphone}
-          onPress={() => Linking.openURL('tel:+251935000642')}
+          onPress={() => Linking.openURL('tel:+251903000102')}
           >
             <Image 
             source={require('../assets/phone.png')}
             style = {styles.phoneimage}
             />
-            <Text>Abdurehman Ali</Text>
+            <Text>Assunah</Text>
           </TouchableOpacity>
-        </View>
-        <View>
-          <TouchableOpacity
-          style = {styles.imageandphone}
-          onPress={() => Linking.openURL('tel:+251935000642')}
-          >
-            <Image 
-            source={require('../assets/phone.png')}
-            style = {styles.phoneimage}
-            />
-            <Text>Remedan</Text>
-          </TouchableOpacity>
-        </View>
-       </View>
+          </View>
+      </View>
       </View>
     </ScrollView>
   )
@@ -108,7 +90,6 @@ const styles = StyleSheet.create ({
     textAlignVertical: 'center'
   },
   imageandtxt: {
-    flexDirection: 'row', 
     backgroundColor: randomRGB(), 
     width: 160, 
     height: 90, 
@@ -116,7 +97,6 @@ const styles = StyleSheet.create ({
     justifyContent: 'center', 
     borderTopRightRadius: 20,
     borderBottomLeftRadius: 20,
-    flexWrap: 'wrap'
   },
   imageandphone: {
     backgroundColor: randomRGB(), 

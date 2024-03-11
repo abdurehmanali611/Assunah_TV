@@ -1,4 +1,4 @@
-import { View, Text, TextInput } from 'react-native'
+import { View, Text, TextInput, Linking } from 'react-native'
 import React, { useState } from 'react'
 import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import { Image } from 'react-native'
@@ -8,7 +8,7 @@ import { ScrollView } from 'react-native';
 const Home = ({navigation}) => {
 
     var menu_image = <Image 
-    source={require('../assets/menu.png')}
+    source={require('../assets/assunahmenu.png')}
     style = {styles.menu}
     />
 
@@ -36,7 +36,7 @@ const Home = ({navigation}) => {
     <View>
     <View style = {styles.topview}>
         <TouchableOpacity 
-        style = {{paddingHorizontal: 19, paddingVertical: 5}}
+        style = {{paddingHorizontal: 16, paddingVertical: 5}}
         onPress={pressedin}
         >
             {menu_image}
@@ -69,6 +69,26 @@ const Home = ({navigation}) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Extra')}>
                     <Text style = {styles.texts}>Extra things</Text>
                 </TouchableOpacity>
+                <View style={{flexDirection: 'row'}}>
+                    <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com/AssunnahTVOfficial')}>
+                        <Image 
+                        source={require('../assets/facebook.png')}
+                        style = {{width: 50, height: 50, borderRadius: 30, marginVertical: 20, marginHorizontal: 17}}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => Linking.openURL('https://l.facebook.com/l.php?u=https%3A%2F%2Ft.me%2FAssunnahTVOfficial%3Ffbclid%3DIwAR0ADHG1Cht0ciDXJeARqI3AKMDbZ7X8crxwK02i3uhRrht76FIAW7r6NNA&h=AT3suhz5UoJTonA-ptOllfB09ARrnr-upGrb5xeZhmbveqeDmHDCfRenHapndqvt4w0_Icm3mgkS-wnU2JA9aNDQCXFJvNLC6yAwdV2E2kF4kcJedl8_fxWoJLwKrWrbVdLe&__tn__=-UK-R&c[0]=AT0cTWuYbmm27GbcPJR8NDGSkjlwl739wBAPzi_5BwSUa-uksogPpWPimTJ2OEvbjTYKMopJVi8UECHNKR0bHCstBMy5MHh-vL9sKHcWKnhkHMWWAsgXtXQCfWbYcBD8_zIERRDNxotoOb77MJk-lUk9AGYvpbTTQv46ty0QrIRYoXsUK5YSIBJ-rvvvW2mgdgOXdqqTPL2a-WuEypWoNg')}>
+                        <Image 
+                        source={require('../assets/telegram.png')}
+                        style = {{width: 50, height: 50, borderRadius: 30, marginVertical: 20, marginHorizontal: 15}}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => Linking.openURL('https://www.youtube.com/channel/UCnUcEEmMpVeXIoW01gKnxIQ')}>
+                        <Image 
+                        source={require('../assets/youtube.png')}
+                        style = {{width: 50, height: 50, borderRadius: 30, marginVertical: 20, marginHorizontal: 15}}
+                        />
+                    </TouchableOpacity>
+                </View>
             </View>
         )}
         <Text style = {styles.header}>Assunah TV</Text>
@@ -78,7 +98,7 @@ const Home = ({navigation}) => {
         <View style = {{alignItems: 'center'}}>
         <Text style = {styles.moderate}>The Way of Moderation</Text>
         <Image 
-        source={require('../assets/assunah.jpg')}
+        source={require('../assets/assunahmosque.png')}
         style = {styles.main_image}
         />
         <Text style = {styles.downtext}>
@@ -152,7 +172,7 @@ const styles = StyleSheet.create({
         lineHeight: 19,
         margin: 10,
         backgroundColor: randomRGB(),
-        width: 360,
+        width: '95%',
         alignItems: 'center',
         borderRadius: 20,
         padding: 20
@@ -172,8 +192,10 @@ const styles = StyleSheet.create({
         marginTop: 15
     },
     menu: {
-        width: 50,
-        height: 50
+        width: 60,
+        height: 60,
+        backgroundColor: 'gray',
+        borderRadius: 20
     },
     header: {
         marginLeft: 10,

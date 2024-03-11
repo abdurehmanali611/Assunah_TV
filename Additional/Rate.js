@@ -1,53 +1,78 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState } from 'react';
-import { View, Text, Button, Modal, TextInput, Alert } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import {StyleSheet, Text, View } from 'react-native';
+import { Rating } from 'react-native-ratings';
 
 const RateUsModal = () => {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [userRating, setUserRating] = useState(0); // Assuming 0 as initial rating
 
-  const handleRateUs = () => {
-    setModalVisible(true);
-  };
+  const [rate, setRate] = useState(0)
 
-  const handleRatingSubmit = () => {
-    if (userRating === 0) {
-      Alert.alert('Please provide a rating (1-5 stars)');
-      return;
-    }
-    // Here, you might implement logic to submit the rating to the app store or a feedback system
-    // This is a placeholder for the submission process
-    Alert.alert(`Thank you for rating ${userRating} stars!`);
-    setModalVisible(false); // Close the modal after submission
-  };
-
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>App Content Goes Here</Text>
-      <Button title="Rate Us" onPress={handleRateUs} />
-
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(false);
-        }}
+  const submitted = () => {
+  AsyncStorage.setItem('ratevalue', JSON.stringify(rate))
+   }
+   
+    return <View style={styles.overall}>
+      <View style={styles.txtparent}>
+        <Text style={styles.txt}>Rate Us</Text>
+      </View>
+      <View>
+      <Text style={styles.ratingtxt}>Rate Us here</Text>
+      <Rating 
+      type='star'
+      ratingCount={5}
+      startingValue={0}
+      imageSize={40}
+      tintColor='purple'
+      onFinishRating={(rte) => setRate(rte)}
+      />
+      <TouchableOpacity onPress={submitted}
+      style={styles.submitrate}
       >
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <View style={{ backgroundColor: 'white', padding: 20 }}>
-            <Text>Please provide your rating (1-5 stars)</Text>
-            <TextInput
-              keyboardType="numeric"
-              onChangeText={(text) => setUserRating(parseInt(text))}
-              placeholder="Enter rating (1-5)"
-            />
-            <Button title="Submit Rating" onPress={handleRatingSubmit} />
-            <Button title="Close" onPress={() => setModalVisible(false)} />
-          </View>
-        </View>
-      </Modal>
+        <Text>Submit</Text>
+      </TouchableOpacity>
     </View>
-  );
-};
+        <View>
+          <Text>You have rated {rate}</Text>
+        </View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+
+  overall: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  txtparent: {
+    marginVertical: 30,
+    backgroundColor: 'green',
+    width: 150,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  txt: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'brown',
+    textDecorationLine: 'underline'
+  },
+  ratingtxt: {
+    marginBottom: 20,
+    fontSize: 18
+  },
+  submitrate: {
+    alignItems: 'center',
+    marginVertical: 10,
+    backgroundColor: 'rgb(150, 50,100)',
+    width: 150,
+    height: 50,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    borderRadius: 30
+  }
+})
 
 export default RateUsModal;

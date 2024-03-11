@@ -46,7 +46,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <stack.Navigator initialRouteName="Home" >
+      <stack.Navigator initialRouteName="support" >
          <stack.Screen name="Home" component={Home} options={{title: 'Assunah TV'}}/>
          <stack.Screen name="Qirat" component={Qiratcenter} options={{title: 'Assunah TV'}}/>
          <stack.Screen name="About" component={AboutUs} options={{title: 'Assunah TV'}}/>

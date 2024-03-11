@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Alert, ScrollView, TextInput } from "react-native";
+import { ScrollView, TextInput } from "react-native";
 import { View, Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { RadioButton } from "react-native-paper";
@@ -17,11 +17,16 @@ const LoginQirat = ({navigation}) => {
     const [name3, setName3] = useState('')
     const [name4, setName4] = useState('')
     const [name5, setName5] = useState('')
-    const [region, setRegion] = useState('')
     const [ischecked, setIsChecked] = useState(false) 
+
+               const next_page = () => {
+                   
+                        navigation.navigate('Login2')
+                }
 
     return <ScrollView>
         <Text>Please Fill the Registration Form below</Text>
+        <Text>Enter at least one child with its gender</Text>
         <Text style = {{marginVertical: 20,marginHorizontal: 60, fontSize: 20, fontStyle: 'italic'}}>Registration Form</Text>
         <View>
        <View>
@@ -172,7 +177,7 @@ const LoginQirat = ({navigation}) => {
         <View style = {{marginVertical: 25,marginHorizontal: '49%',alignItems: 'center'}}>
             <TouchableOpacity
             style = {{borderRadius: 30, width: 150, height: 60, backgroundColor: `rgb(100,150,200)`,alignItems: 'center',justifyContent: 'center'}}
-            onPress={() => navigation.navigate('Login2')}
+            onPress={next_page}
             >
                 <Text>Next</Text>
             </TouchableOpacity>
